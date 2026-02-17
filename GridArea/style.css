@@ -1,0 +1,48 @@
+#container{
+    display: grid;
+    max-width: 960px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+
+    color: white;
+    text-align: center;
+
+    /* Grid area using words instead of coordinates */
+    grid-template-areas: /* grid has 4 cloumns and "unlimited" rows (cause 'grid-auto-rows' instead of 'template' used) */
+    "head head head head" 
+    "aside  aside  main   main"
+    ".   navi   main   main"
+    "section section section section" 
+    "section section section section" 
+    "footer footer footer footer"  
+    ;
+
+    /* Putting a . does not work with all the types of grid areas (for some odd reason) */
+}
+
+#container > *{
+    background-color: mediumturquoise;
+    padding: 30px;
+}
+
+/* Assigning grid area names (can be anything)*/
+header{
+    grid-area: head;
+}
+main{
+    grid-area: main;
+}
+section{
+    grid-area: section;
+}
+aside{
+    grid-area: aside;
+}
+nav{
+    grid-area: navi;
+}
+footer{
+    grid-area: footer;
+}
